@@ -56,15 +56,10 @@ lan_provider_seed = on
 With `lan_override_host=on`, the game's original LAN TCP connection is redirected to
 the configured LAN endpoint. With `lan_provider_seed=on`, LAN broadcast discovery
 packets are mirrored directly to `lan_host`; this is the first MW-safe discovery
-hook while the exact in-memory server-list provider is still being mapped. If MW's
-LAN discovery uses a fixed UDP port, set `lan_discovery_port`; otherwise the mirror
-uses the original broadcast destination port.
+hook while the exact in-memory server-list provider is still being mapped.
 
 With `online_override_host=on`, the game's stock online/bootstrap endpoint is
 redirected to `bootstrap_host`/`bootstrap_port`, falling back to `server_host`.
-
-For MW LAN room join, keep `lan_port` on `9900`. The stock LAN capture sends the
-room create/join flow on TCP `9900`, not on the online-style `20922` lobby port.
 
 If a per-service host is omitted, it falls back to `server_host`. If `server_host` is
 also omitted, the built-in default is used. Ports do not inherit from a main port;
